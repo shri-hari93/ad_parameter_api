@@ -18,8 +18,8 @@ The rake task will transform the given configuration.xml to protobuf and prints 
 
 ### Steps for rake task
 - After Installation, run the rake task using ```rake ad_parameter_task``` in the root directory
-- To trasform a new dashboard configuration file, add the ```*.xml``` to folder dashboard_configurations in the root directory
-- Rerun the rake task after adding the new configuration file
+- To transform a new dashboard configuration file, add the ```*.xml``` to folder dashboard_configurations in the root directory
+- Re-run the rake task after adding the new configuration file
 
 ### Steps for Web Server
 - Start the server using ```rails s``` command
