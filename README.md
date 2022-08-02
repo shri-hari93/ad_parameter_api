@@ -1,5 +1,4 @@
 # AD_PARAMETER_API
-
 The Application consist of
 - rake task
 - web server
