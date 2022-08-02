@@ -24,7 +24,7 @@ The Web server is a simple rails api which returns json Object of placements wit
 
 ### Steps for Web Server
 - Start the server using ```rails s``` command
-- To check the service, make an api get request to the endpoint "https://localhost:3000/placements/plc-1"
+- To check the service, make an api get request to the endpoint "http://localhost:3000/placements/plc-1"
 
 ### Steps for tests
 - Run the specs, run ```rspec``` in the root directory
