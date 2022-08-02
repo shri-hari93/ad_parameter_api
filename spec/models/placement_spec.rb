@@ -4,7 +4,7 @@ require "rails_helper"
 
 RSpec.describe Placement, type: :model do
   describe "creative" do
-    subject(:add_placement) { placement.creative }
+    subject(:placement_creative) { placement.creative }
 
     let(:placement) do
       described_class.create(
@@ -22,7 +22,7 @@ RSpec.describe Placement, type: :model do
       end
 
       it "returns nil" do
-        expect(add_placement).to be_nil
+        expect(placement_creative).to be_nil
       end
     end
 
@@ -35,7 +35,7 @@ RSpec.describe Placement, type: :model do
       end
 
       it "returns nil" do
-        expect(add_placement).not_to be_nil
+        expect(placement_creative).not_to be_nil
       end
     end
 
@@ -48,7 +48,7 @@ RSpec.describe Placement, type: :model do
       end
 
       it "returns nil" do
-        expect(add_placement).not_to be_nil
+        expect(placement_creative).not_to be_nil
       end
     end
   end

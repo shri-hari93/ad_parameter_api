@@ -9,13 +9,13 @@ RSpec.describe AdParameter do
     let!(:xml) { File.read("dashboard_configurations/sample_configuration.xml") }
 
     it "extracts creative" do
-      object = described_class.new(xml)
-      expect(object.creatives.map(&:id)).to include("Video-1")
+      creatives = described_class.new(xml).creatives
+      expect(creatives.map(&:id)).to include("Video-1")
     end
 
     it "extracts placements" do
-      object = described_class.new(xml)
-      expect(object.placements.map(&:id)).to include("plc-1")
+      placements = described_class.new(xml).placements
+      expect(placements.map(&:id)).to include("plc-1")
     end
   end
 
@@ -31,7 +31,8 @@ RSpec.describe AdParameter do
 
       it "converts to EUR" do
         creative = described_class.new(xml).creatives.first
-        expect(creative.price.round(4)).to eq((1.1234 / CurrencyConversion::CONVERSION_RATE["USD"]).round(4))
+        price_in_euro = (1.1234 / CurrencyConversion::CONVERSION_RATE["USD"]).round(4)
+        expect(creative.price.round(4)).to eq(price_in_euro)
       end
     end
 
@@ -46,7 +47,8 @@ RSpec.describe AdParameter do
 
       it "converts to EUR" do
         creative = described_class.new(xml).creatives.first
-        expect(creative.price.round(4)).to eq((1.1234 / CurrencyConversion::CONVERSION_RATE["SEK"]).round(4))
+        price_in_euro = (1.1234 / CurrencyConversion::CONVERSION_RATE["SEK"]).round(4)
+        expect(creative.price.round(4)).to eq(price_in_euro)
       end
     end
 
@@ -61,7 +63,8 @@ RSpec.describe AdParameter do
 
       it "converts to EUR" do
         creative = described_class.new(xml).creatives.first
-        expect(creative.price.round(4)).to eq((1.1234 / CurrencyConversion::CONVERSION_RATE["TYR"]).round(4))
+        price_in_euro = (1.1234 / CurrencyConversion::CONVERSION_RATE["TYR"]).round(4)
+        expect(creative.price.round(4)).to eq(price_in_euro)
       end
     end
   end

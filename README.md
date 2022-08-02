@@ -3,8 +3,7 @@ The Application consist of
 - rake task
 - web server
 
-The rake task will transform the given configuration.xml to protobuf and prints the output in STDOUT
-The Web server is a simple rails api which returns json Object of placements with a creative, when particular placement is requested
+The rake task will transform the given configuration.xml to protobuf and prints the output in STDOUT. The web server is a simple rails api which returns json Object of placements with a creative, when particular placement is requested
 
 ## SETUP
 
