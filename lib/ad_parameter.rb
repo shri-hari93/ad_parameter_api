@@ -14,7 +14,7 @@ class AdParameter
 
   def creatives
     @creatives ||= creative_tags.map do |tag|
-      FYBER::Userconfiguration::Creative.new(
+      Creative.new(
         id: get_attribute_value(tag, "id"),
         price: convert_to_euro(get_attribute_value(tag, "price"), get_attribute_value(tag, "currency"))
       )
@@ -24,7 +24,7 @@ class AdParameter
   def placements
     @placements ||= placement_tags.map do |tag|
       floor_price = convert_to_euro(get_attribute_value(tag, "floor"), get_attribute_value(tag, "currency"))
-      FYBER::Userconfiguration::Placement.new(
+      Placement.new(
         id: get_attribute_value(tag, "id"),
         creative: creatives.filter { |creative| creative.price >= floor_price }
       )
@@ -32,11 +32,11 @@ class AdParameter
   end
 
   def placement_sequence
-    FYBER::Userconfiguration::PlacementSeq.new(placement: placements)
+    PlacementSeq.new(placement: placements)
   end
 
   def serialize
-    FYBER::Userconfiguration::PlacementSeq.encode(placement_sequence)
+    PlacementSeq.encode(placement_sequence)
   end
 
   private
