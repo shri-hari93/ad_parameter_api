@@ -17,8 +17,8 @@ The rake task will transform the given configuration.xml to protobuf and prints 
 
 - Clone the repository
 - In the root directory ```bundle install```
-- Create postgres user role and update it accordingly in ```config/database.yml```
-- Setup your database with necessary tables and development data using ```rake db:setup```
+- Create postgres user role and update it accordingly in ```config/database.yml``` ---> (Optional for rake take, necessary for webserver)
+- Setup your database with necessary tables and development data using ```rake db:setup``` ---> (Optional for rake take, necessary for webserver)
 
 ### Steps for rake task
 
